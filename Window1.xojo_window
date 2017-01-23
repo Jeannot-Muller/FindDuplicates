@@ -309,6 +309,7 @@ End
 #tag Events pbSearch
 	#tag Event
 		Sub Action()
+		  // Declarations
 		  Dim input1 as string = TAInput1.Text
 		  Dim input2 as string = TAInput2.text
 		  Dim array1() as string = ReplaceLineEndings(input1,EndOfLine).Split(EndOfLine)
@@ -317,7 +318,7 @@ End
 		  Dim resultIndex as double
 		  
 		  For Each interimString As string In array1
-		      // Searching if line can be found in array2
+		    // Searching if line can be found in array2
 		    resultIndex = array2.IndexOf(interimString) 
 		    if resultIndex <> -1 then
 		      duplicates.Append(array2(resultIndex))
@@ -326,10 +327,10 @@ End
 		  
 		  // No results
 		  if duplicates.Ubound = -1 then
-		     duplicates.append("No duplicates found")
+		    duplicates.append("No duplicates found")
 		  else
 		    // Sort the found duplicates
-		     duplicates.Sort
+		    duplicates.Sort
 		  end if
 		  
 		  // write the results
